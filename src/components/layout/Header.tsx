@@ -13,11 +13,15 @@ const Header: React.FC/*<HeaderProps>*/ = (/*{ height }*/) => {
   const themeTypography = defaultTheme.typography;
   const themeSpacing = defaultTheme.spacing;
 
-  const headerStyle: React.CSSProperties = {
-    // height: headerConfig.height, // REMOVED fixed height
-    backgroundColor: headerConfig.backgroundColor,
-    color: headerConfig.textColor,
-    // Padding is handled by the .header class for overall structure
+  // Placeholder for dynamic date later
+  const dateLine1 = "On this 18th day of May,";
+  const dateLine2 = "in the year of our Lord 2025";
+
+  const headerContainerStyle: React.CSSProperties = {
+    // backgroundColor: headerConfig.backgroundColor, // Background is on .header class via CSS module
+    // color: headerConfig.textColor, // Default text color for header
+    position: 'relative', // Crucial for absolute positioning of the date
+    // Height is determined by content + padding in Header.module.css
   };
 
   const titleStyle: React.CSSProperties = {
@@ -25,30 +29,34 @@ const Header: React.FC/*<HeaderProps>*/ = (/*{ height }*/) => {
     fontSize: themeTypography.headline1.size,
     fontWeight: themeTypography.headline1.weight as React.CSSProperties['fontWeight'],
     lineHeight: themeTypography.headline1.lineHeight,
-    // marginBottom: '20px', // Reduce or remove to let flexbox do more centering work
-    // The .navigation class will have margin-top to create space for the first line
   };
 
   const navLinkStyle: React.CSSProperties = {
-    fontFamily: themeTypography.body1.family, // Or a specific nav font
-    fontSize: '0.9rem', // Example size
+    fontFamily: themeTypography.body1.family, 
+    fontSize: '0.9rem', 
     textDecoration: 'none',
     color: headerConfig.textColor,
     margin: `0 ${themeSpacing.sm}`,
   };
 
   return (
-    <header className={styles.header} style={headerStyle}>
-      <h1 className={styles.title} style={titleStyle}>The Rotten Fish</h1>
-      <nav className={styles.navigation}>
-        {/* Links will be centered due to justify-content: center on styles.navigation */}
-        <a href="#" style={navLinkStyle}>Country</a>
-        <a href="#" style={navLinkStyle}>Politics</a>
-        <a href="#" style={navLinkStyle}>Sports</a>
-        <a href="#" style={navLinkStyle}>Work</a>
-        <a href="#" style={navLinkStyle}>Rough Housing</a>
-        <a href="#" style={navLinkStyle}>Grim</a>
-      </nav>
+    <header className={styles.header} style={headerContainerStyle}>
+      <div className={styles.dateBlock}>
+        {dateLine1}<br />
+        {dateLine2}
+      </div>
+
+      <div className={styles.titleNavBlock}> {/* Wrapper for title and nav */} 
+        <h1 className={styles.title} style={titleStyle}>The Rotten Fish</h1>
+        <nav className={styles.navigation}>
+          <a href="#" style={navLinkStyle}>Country</a>
+          <a href="#" style={navLinkStyle}>Politics</a>
+          <a href="#" style={navLinkStyle}>Sports</a>
+          <a href="#" style={navLinkStyle}>Work</a>
+          <a href="#" style={navLinkStyle}>Rough Housing</a>
+          <a href="#" style={navLinkStyle}>Grim</a>
+        </nav>
+      </div>
     </header>
   );
 };

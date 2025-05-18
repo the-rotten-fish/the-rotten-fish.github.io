@@ -18,26 +18,26 @@ export const defaultTheme: Theme = {
       family: '"luke-thin", "Noto Serif", Georgia, serif',
       size: '6rem',
       weight: '100',
-      lineHeight: '1.3',
+      lineHeight: '1.2',
       letterSpacing: 'normal'
     },
     storyHeadlineRank1: {
       family: '"Noto Serif", Georgia, serif',
       size: '2.25rem',
       weight: '700',
-      lineHeight: '1.3'
+      lineHeight: '1.2'
     },
     storyHeadlineRank2: {
       family: '"Noto Serif", Georgia, serif',
       size: '1.75rem',
       weight: '700',
-      lineHeight: '1.35'
+      lineHeight: '1.3'
     },
     storyHeadlineRank3: {
       family: '"Noto Serif", Georgia, serif',
       size: '1.5rem',
       weight: '700',
-      lineHeight: '1.4'
+      lineHeight: '1.35'
     },
     storyHeadlineFallback: {
       family: '"Noto Serif", Georgia, serif',

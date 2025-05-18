@@ -1,35 +1,56 @@
+/* Styles for the main <header> element */
 .header {
-  display: flex;
-  flex-direction: column; /* Stack title and nav vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Revert to center, will control spacing with padding/margins */
-  /* Apply horizontal padding consistent with pagePadding */
-  padding: 30px 24px 5px 24px; /* Test: More top padding, less bottom to balance large title */
+  padding: 20px 24px; /* Vertical and Horizontal padding for the entire header area */
   width: 100%; 
-  box-sizing: border-box; /* Ensure padding is included in width calculation if needed, but width:100% usually means of parent content-box */
-  text-align: center; /* Ensure text within is centered by default */
-  position: relative; /* For absolute positioning of lines if needed, or use borders */
+  box-sizing: border-box; 
+  position: relative; /* Crucial for absolute positioning of the dateBlock */
+  background-color: #f3ede1; /* Header's own background, from layout.ts */
+  color: #333333; /* Default text color for header, from layout.ts */
+  /* This element is NOT a flex container for its direct children (.dateBlock, .titleNavBlock) */
+  /* Its height will be determined by the .titleNavBlock and its own padding */
+}
+
+/* For the absolutely positioned date */
+.dateBlock {
+  position: absolute;
+  left: 24px; /* Aligns with header's left padding */
+  top: 30%;
+  /* transform: translateY(-110%); */
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.85rem; /* Or your preferred size */
+  /* line-height: 1.4; */
+  color: inherit; /* Inherits color from .header or can be specific */
+  text-align: left;
+  z-index: 1; /* Ensure it's above other static content if any overlap, though unlikely here */
+}
+
+/* Wrapper for the main title and navigation, this block will be centered */
+.titleNavBlock {
+  display: flex; /* Handles internal centering of title and nav elements */
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; /* Centers the text within title and nav links */
+  /* This block takes up space in the normal flow. */
+  /* No explicit width or margin:auto needed here as text-align centers inline/text content, */
+  /* and align-items centers block children like the nav itself. */
 }
 
 .title {
-  margin: 0 0 25px 0; /* Explicit bottom margin for title, adjusted */
-  /* Font style is applied inline from Header.tsx titleStyle */
-  /* Margin bottom is also in titleStyle in Header.tsx - ensure this is commented out if setting here */
-  /* Add some explicit margin for spacing if titleStyle doesn't have it, */
-  /* or rely on padding of .header and margin of .navigation */
-  /* e.g., margin-bottom: 10px; if needed and not in titleStyle */
+  margin: 0 0 25px 0; 
+  /* Font styles are applied inline in Header.tsx */
 }
 
 .navigation {
-  display: flex; /* Lay out links in a row */
-  justify-content: center; /* Center the links container itself */
+  display: flex; 
+  justify-content: center; 
   align-items: center;
-  width: 100%;
-  padding: 10px 0; /* Padding around the links, inside the borders */
-  position: relative; /* For the pseudo-elements for lines */
-  border-top: 3px solid #000; /* Thick line above links */
-  border-bottom: 1px solid #000; /* Thin line below links */
-  margin: 0; /* Remove all margins, spacing controlled by .title and .header padding */
+  width: 100%; /* Takes full width of .titleNavBlock for its borders */
+  padding: 5px 0; 
+  position: relative;
+  border-top: 3px solid #000; 
+  border-bottom: 1px solid #000; 
+  margin: 0; 
 }
 
 /* Individual link styling is mostly inline via navLinkStyle in the component */
