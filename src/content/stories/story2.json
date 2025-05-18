@@ -1,0 +1,28 @@
+{
+  "id": "story-2",
+  "content": {
+    "title": "Retro Zine Culture Resurfaces",
+    "author": "Dr. Times",
+    "date": "2024-05-20",
+    "article": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.\n\nPulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu.",
+    "summary": "The sticker-punk aesthetic of 90s student zines is making a surprising comeback among young activists.",
+    "assets": {
+      "images": [
+        {
+          "src": "/assets/test/u5578278918_zine_cover_90s_sticker-punk_style_student_protester_9ef44be3-a19f-4a1a-9d31-3fc55f65f91a.png",
+          "alt": "90s sticker-punk style zine cover with student protester"
+        }
+      ]
+    }
+  },
+  "layout": {
+    "isHomePage": true,
+    "hierarchy": 2,
+    "span": 3,
+    "imageConfig": {
+      "position": "top",
+      "size": "medium"
+    }
+  },
+  "tags": ["culture", "zine", "90s", "activism"]
+} 

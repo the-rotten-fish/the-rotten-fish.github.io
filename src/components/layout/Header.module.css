@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  flex-direction: column; /* Stack title and nav vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Revert to center, will control spacing with padding/margins */
+  /* Apply horizontal padding consistent with pagePadding */
+  padding: 30px 24px 5px 24px; /* Test: More top padding, less bottom to balance large title */
+  width: 100%; 
+  box-sizing: border-box; /* Ensure padding is included in width calculation if needed, but width:100% usually means of parent content-box */
+  text-align: center; /* Ensure text within is centered by default */
+  position: relative; /* For absolute positioning of lines if needed, or use borders */
+}
+
+.title {
+  margin: 0 0 25px 0; /* Explicit bottom margin for title, adjusted */
+  /* Font style is applied inline from Header.tsx titleStyle */
+  /* Margin bottom is also in titleStyle in Header.tsx - ensure this is commented out if setting here */
+  /* Add some explicit margin for spacing if titleStyle doesn't have it, */
+  /* or rely on padding of .header and margin of .navigation */
+  /* e.g., margin-bottom: 10px; if needed and not in titleStyle */
+}
+
+.navigation {
+  display: flex; /* Lay out links in a row */
+  justify-content: center; /* Center the links container itself */
+  align-items: center;
+  width: 100%;
+  padding: 10px 0; /* Padding around the links, inside the borders */
+  position: relative; /* For the pseudo-elements for lines */
+  border-top: 3px solid #000; /* Thick line above links */
+  border-bottom: 1px solid #000; /* Thin line below links */
+  margin: 0; /* Remove all margins, spacing controlled by .title and .header padding */
+}
+
+/* Individual link styling is mostly inline via navLinkStyle in the component */
+
+/* REMOVE THE DUPLICATED .title CLASS BELOW */ 

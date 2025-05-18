@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensures image border radius is respected if image is child */
+  height: 100%; /* Ensure card tries to fill cell height */
+  /* border-right: 1px solid #8a817c; */ /* REMOVED - will use pseudo-elements on grid items now */
+  border-bottom: 1px solid rgba(118, 116, 109, 0.5); /* Changed color and added opacity */
+  /* Note: to prevent lines on the very edge of the grid, 
+     Grid.tsx would need logic to conditionally not apply these to last items in row/column 
+     or a different styling approach for the container. 
+     For now, all cards get them. The grid 'gap' will separate these borders. */
+}
+
+.imageContainer {
+  width: 100%;
+  position: relative; /* For Next/Image layout='responsive' or fixed sizes */
+  margin-bottom: 12px; /* Space between image and title */
+}
+
+/* Ensure Next/Image fills container if using width/height with layout='responsive' or similar */
+.imageContainer img {
+  width: 100% !important; /* Important to override inline styles if needed */
+  height: auto !important;
+  object-fit: cover; /* Default, can be overridden by story.layout.imageConfig.fit */
+}
+
+.title {
+  margin-bottom: 8px;
+  /* Font styles are applied inline from theme */
+}
+
+.summary {
+  /* Font styles are applied inline from theme */
+  flex-grow: 1; /* If card is in a flex container and needs to fill height */
+} 
