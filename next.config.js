@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
-
-// Replace 'YOUR_REPOSITORY_NAME' with the actual name of your GitHub repository
-// For example, if your repo is github.com/user/my-repo, then REPO_NAME is 'my-repo'
-const REPO_NAME = 'the-rotten-fish'; 
+// const REPO_NAME = 'the-rotten-fish'; // No longer needed for basePath if served at root
+// const isProduction = process.env.NODE_ENV === 'production'; // No longer needed for conditional basePath
 
 const nextConfig = {
   reactStrictMode: true,
@@ -22,7 +19,7 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
-  basePath: isGithubActions ? `/${REPO_NAME}` : '',
+  basePath: '', 
 
   /**
    * Disable server-based image optimization. Next.js' default image optimization will not work with static exports.
