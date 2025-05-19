@@ -49,12 +49,14 @@ const Header: React.FC/*<HeaderProps>*/ = (/*{ height }*/) => {
       <div className={styles.titleNavBlock}> {/* Wrapper for title and nav */} 
         <h1 className={styles.title} style={titleStyle}>The Rotten Fish</h1>
         <nav className={styles.navigation}>
-          <a href="#" style={navLinkStyle}>Country</a>
+          <a href="#" style={navLinkStyle}>God & Country</a>
           <a href="#" style={navLinkStyle}>Politics</a>
-          <a href="#" style={navLinkStyle}>Sports</a>
           <a href="#" style={navLinkStyle}>Work</a>
-          <a href="#" style={navLinkStyle}>Rough Housing</a>
-          <a href="#" style={navLinkStyle}>Grim</a>
+          <a href="#" style={navLinkStyle}>Family</a>
+          <a href="#" style={navLinkStyle}>Rotten</a>
+          <a href="#" style={navLinkStyle}>Sports</a>
+          <a href="#" style={navLinkStyle}>Fashion</a>
+          <a href="#" style={navLinkStyle}>Techmology</a>
         </nav>
       </div>
     </header>
